@@ -11,5 +11,6 @@
 <h2>update was deployed with jenkins job :) :)</h2>
 <h2>this is was showing by auto deploy job ;) </h2>
 <h2>Test hihihi !!!!!! </h2>
+<h2>creation new pipeline from package app to deploy on prod env</h2>
 </body>
 </html>
