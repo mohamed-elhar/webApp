@@ -1,8 +1,8 @@
 pipeline {
 	agent any
 	stages {
-		stage('Build') {
-			steps {
+		stage("Build") {
+			step {
 				echo " Start build the app "
 				bat "mvn clean package"
 			}
@@ -11,6 +11,11 @@ pipeline {
 					echo " build success , now archiving the artifact "
 					archiveArtifacts artifacts : "**/webApp.war"
 				}
+			}
+		}
+		stage("Deploy in staging env"){
+			step{
+				build job : "deploy app in staging env"
 			}
 		}
 	}
