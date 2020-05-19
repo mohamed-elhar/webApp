@@ -14,5 +14,7 @@
 <h2>creation new pipeline from package app to deploy on prod env :)</h2>
 
 <h1>pipeline code :)</h1>
+
+<p>Create new branch : fixbug</p>
 </body>
 </html>
