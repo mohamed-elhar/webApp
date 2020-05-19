@@ -34,7 +34,7 @@ pipeline {
 				timeout(time : 5, unit : "DAYS"){
 					input message : " This jobs needs to be approuved before execution ! "
 				}
-				build job : "deploy app in prod env"
+				build job : "deploy app prod env"
 			}
 		}
 	}
