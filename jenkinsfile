@@ -18,5 +18,13 @@ pipeline {
 				build job : "deploy app in staging env"
 			}
 		}
+		stage("Deploy in production env"){
+			steps {
+				timeout(time : 5, unit : "DAY"){
+					input message : " This jobs needs to be approuved before execution ! "
+				}
+				build job : "deploy app in prod env"
+			}
+		}
 	}
 }
