@@ -5,8 +5,8 @@ pipeline {
 	stages {
 		stage("Init"){
 			steps {
-				echo "{stagingEnv}"
-				echo "{prodEnv}"
+				echo "${stagingEnv}"
+				echo "${prodEnv}"
 			}
 		}
 		stage("Build") {
@@ -17,8 +17,8 @@ pipeline {
 			post{
 				success{
 					echo " build success , now archiving the artifact "
-					bat  " del /f /q {stagingEnv}webApp.war {stagingEnv}webApp "
-					bat  " del /f /q {stagingEnv}webApp.war {stagingEnv}webApp "
+					bat  " del /f /q ${stagingEnv}webApp.war ${stagingEnv}webApp "
+					bat  " del /f /q ${stagingEnv}webApp.war ${stagingEnv}webApp "
 					echo " deleting war from webapp directory "
 					archiveArtifacts artifacts : "**/webApp.war"
 				}
