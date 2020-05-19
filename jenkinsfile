@@ -2,7 +2,7 @@ pipeline {
 	agent any
 	stages {
 		stage("Build") {
-			step {
+			steps {
 				echo " Start build the app "
 				bat "mvn clean package"
 			}
@@ -14,7 +14,7 @@ pipeline {
 			}
 		}
 		stage("Deploy in staging env"){
-			step{
+			steps {
 				build job : "deploy app in staging env"
 			}
 		}
