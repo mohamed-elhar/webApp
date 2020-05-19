@@ -9,10 +9,10 @@ pipeline {
 			post{
 				success{
 					echo " build success , now archiving the artifact "
-					bat  " cd C:\Users\sqli\Documents\training\tools\staging\apache-tomcat-8.5.54\webapps "
+					bat  " cd C:\\Users\\sqli\\Documents\\training\\tools\\staging\\apache-tomcat-8.5.54\\webapps "
 					bat  " del /f /q webApp.war webApp "
 					bat  " Start-Sleep -s 5 "
-					bat  " cd C:\Users\sqli\Documents\training\tools\prod\apache-tomcat-8.5.54\webapps "
+					bat  " cd C:\\Users\\sqli\\Documents\\training\\tools\\prod\\apache-tomcat-8.5.54\\webapps "
 					bat  " del /f /q webApp.war webApp "
 					echo " deleting war from webapp directory "
 					archiveArtifacts artifacts : "**/webApp.war"
