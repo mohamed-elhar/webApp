@@ -1,6 +1,14 @@
+def stagingEnv = "C:\\Users\\sqli\\Documents\\training\\tools\\staging\\apache-tomcat-8.5.54\\webapps\\"
+def prodEnv = "C:\\Users\\sqli\\Documents\\training\\tools\\prod\\apache-tomcat-8.5.54\\webapps\\"
 pipeline {
 	agent any
 	stages {
+		stage("Init"){
+			steps {
+				echo "{stagingEnv}"
+				echo "{prodEnv}"
+			}
+		}
 		stage("Build") {
 			steps {
 				echo " Start build the app "
@@ -9,10 +17,8 @@ pipeline {
 			post{
 				success{
 					echo " build success , now archiving the artifact "
-					bat  " cd C:\\Users\\sqli\\Documents\\training\\tools\\staging\\apache-tomcat-8.5.54\\webapps "
-					bat  " del /f /q webApp.war webApp "
-					bat  " cd C:\\Users\\sqli\\Documents\\training\\tools\\prod\\apache-tomcat-8.5.54\\webapps "
-					bat  " del /f /q webApp.war webApp "
+					bat  " del /f /q {stagingEnv}webApp.war {stagingEnv}webApp "
+					bat  " del /f /q {stagingEnv}webApp.war {stagingEnv}webApp "
 					echo " deleting war from webapp directory "
 					archiveArtifacts artifacts : "**/webApp.war"
 				}
