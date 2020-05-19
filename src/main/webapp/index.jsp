@@ -13,6 +13,6 @@
 <h2>Test hihihi !!!!!! </h2>
 <h2>creation new pipeline from package app to deploy on prod env :)</h2>
 
-<h1>pipeline code :) message</h1>
+<h1>pipeline code :)</h1>
 </body>
 </html>
